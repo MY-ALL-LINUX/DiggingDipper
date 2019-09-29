@@ -1,30 +1,44 @@
 
-----Liniux Kernel meetup (abhya sing)----
+----Linux Kernel meetup (by abhya sing)----
 [ Dt :: 29th september 2019 ]
 
 
-
-boot loader (BIOS) [grub] []prepares-os
-
-grub::
-init rd(pid1), 
-
-
-
-
 _________
-systemcall implementation
-kernel space, user space
+cavets ::
+>> when a system turns on, the boot loader(grub), initialise RAM & loads BIOS Image
+  initrd(pid1) - initialise RAM Disk, with pid(Process Id) 1
+  then gives an option to choose OS
 
-gcc prg1.c -o prg1
+>> There are basically 2 space we will talk about
+  -- user space
+  -- kernel space
 
-eELF
+>> when we talk about a 64 bit machine, we talk about it's address bar, and addressing capabilities
+  a 64-bit m/c would have a capability of addressing a memory of size (2^64 - 1)
 
-file prg1
-prg1: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/l, for GNU/Linux 3.2.0, BuildID[sha1]=87d50c77e0f3252b95de482c49e1b5f6c712ad1a, not stripped
-subrat@palmatesolution:~/Desktop/subrat/a_learing/Linux$ 
+>> ELF :
+  In computing, the Executable and Linkable Format (ELF, formerly named Extensible Linking Format),
+  is a common standard file format for
+    --executable files,
+    --object code,
+    --shared libraries, &
+    --core dumps.
 
-2^64 - 1
+
+
+
+_______________________
+Commands & It's Uses ::
+  ||  gcc prg1.c -o prg1   //compiles
+
+  || file prg1
+      prg1: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV),
+        dynamically linked, interpreter /lib64/l,
+        for GNU/Linux 3.2.0,
+        BuildID[sha1]=87d50c77e0f3252b95de482c49e1b5f6c712ad1a, not stripped
+
+
+
 
 
 schedular: run queue
